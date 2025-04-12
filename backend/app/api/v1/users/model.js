@@ -2,7 +2,7 @@ const sequelize = require("../../../config/config.js");
 const { DataTypes } = require("sequelize");
 const bcryptjs = require("bcryptjs");
 
-const Users = sequelize.define("Users", {
+const Users = sequelize.define("users", {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -44,10 +44,14 @@ const Users = sequelize.define("Users", {
     allowNull: false,
     defaultValue: DataTypes.NOW,
   },
+}, {
+  freezeTableName: true 
 });
+
 Users.beforeCreate((user) => {
   user.password = bcryptjs.hashSync(user.password, 10);
 });
+
 Users.sync();
 
 module.exports = Users;
