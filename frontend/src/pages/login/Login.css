@@ -1,0 +1,30 @@
+/* src/styles/Login.css */
+.login-card {
+  width: 100%;
+  max-width: 900px;
+  background-color: #ffffff;
+  border-radius: 1.5rem;
+}
+.fade-slide-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideIn 2s ease forwards;
+  animation-delay: 0.5s;
+}
+
+
+@media (max-width: 767.98px) {
+  .login-card .bg-primary img {
+    max-height: 150px;
+  }
+
+  .login-card .bg-primary h4 {
+    font-size: 1.2rem;
+  }
+
+  .login-card {
+    border-radius: 1rem;
+
+  }
+}
+
